@@ -108,7 +108,42 @@
   4. Repair strategy generation
   5. Risk assessment
 
-#### 2.2.2 Decision Matrix
+#### 2.2.2 Adaptive Confidence System
+Inspired by Synoptic Executive's adaptive threshold approach:
+
+```python
+class RepairDecisionEngine:
+    def calculate_repair_confidence(self, issues, system_state):
+        """
+        Adaptive confidence based on:
+        - Issue severity (corrupted vs missing vs modified)
+        - Source availability (local cache vs network)
+        - Risk assessment (system-critical vs optional)
+        """
+        base_confidence = 0.7
+        
+        # Low source availability? Be more conservative
+        if not system_state.has_local_cache:
+            base_confidence -= 0.2
+        
+        # System-critical file? Higher bar
+        if issues.affects_boot:
+            base_confidence += 0.1
+            
+        # Known pattern match? Higher confidence
+        if issues.matches_known_pattern:
+            base_confidence += 0.15
+            
+        return min(base_confidence, 0.95)
+```
+
+#### 2.2.3 Pattern Taxonomy System
+Cross-domain pattern matching from Synoptic Executive:
+- Map Windows error codes → registry issues → file corruption patterns
+- Track repair outcomes → improve confidence over time
+- Learn from each repair session
+
+#### 2.2.4 Decision Matrix
 - **File Missing:** Download from Microsoft Update/DISM source
 - **File Corrupted:** Replace with verified hash from local/cloud database
 - **Registry Broken:** Restore from backup or rebuild affected keys
@@ -191,10 +226,23 @@
 ```
 /rescue-stick/
 ├── ai_core/
-│   ├── diagnostic_engine.py
+│   ├── diagnostic_engine.py       # Main AI orchestration
+│   ├── adaptive_confidence.py    # Synoptic Executive-inspired threshold
+│   ├── pattern_taxonomy.py       # Cross-domain pattern matching
 │   ├── hash_database.py
 │   ├── repair_strategies.py
 │   └── models/
+├── engines/                       # Holographic-style parallel engines
+│   ├── 00_safety_evaluation.py   # Pre-repair safety checks, veto power
+│   ├── 01_oracle.py              # Multiple diagnostic perspectives
+│   ├── 02_file_scanner.py        # System breakdown - file analysis
+│   ├── 03_registry_parser.py     # Registry hive analysis
+│   ├── 04_event_log_engine.py    # Event log error parsing
+│   ├── 05_hash_verifier.py       # Integrity checking
+│   ├── 06_diagnostic_synthesis.py # Integrate all findings
+│   ├── 07_memory.py              # Session continuity
+│   ├── 08_learning.py            # Outcome tracking, improve over time
+│   └── 09_risk_assessment.py     # Emotional/risk factors for repairs
 ├── windows_analyzer/
 │   ├── file_scanner.py
 │   ├── registry_parser.py
