@@ -20,27 +20,15 @@ RescueStick is designed for the scenario where:
 ### How It Works
 
 ```
-Windows System Failure
-         ↓
-   Boot from RescueStick USB (Linux in RAM)
-         ↓
-   Mount Windows (read-only for safety)
-         ↓
-   AI Diagnostics:
-   - File hash verification (corrupted/missing files)
-   - Registry analysis (broken keys/hives)
-   - Event log parsing (error patterns)
-   - Boot configuration analysis
-         ↓
-   Generate Repair Strategy
-         ↓
-   Execute Repairs:
-   - Replace corrupted files
-   - Fix registry issues
-   - Repair boot config
-   - (Optional) Apply tweaks
-         ↓
-   Reboot to Repaired Windows
+1. Plug RescueStick USB into failed Windows device
+2. Boot from USB → Linux system loads in RAM
+3. User runs diagnostic tools (symptom-based scanning):
+   - "System won't boot" → boot analysis
+   - "Blue screen" → crash dump analysis
+   - "Update failed" → Windows Update repair
+   - "Slow performance" → file/registry analysis
+4. AI analyzes findings → generates repair strategy
+5. Execute repairs → reboot to fixed Windows
 ```
 
 ### Not a Backup Replacement
@@ -55,6 +43,34 @@ RescueStick is the **fallback** when:
 - No backup available
 - Backup is also corrupted
 - Quick repair needed (can't wait for restore)
+
+### Symptom-Based Diagnostics
+
+Users select their issue from a menu:
+
+```
+╔════════════════════════════════════════╗
+║      RESCUE STICK - Select Issue      ║
+╠════════════════════════════════════════╣
+║  1. System won't boot                ║
+║  2. Blue Screen of Death (BSOD)       ║
+║  3. Windows Update failed              ║
+║  4. Slow performance                  ║
+║  5. Application crashes               ║
+║  6. Network issues                    ║
+║  7. Driver problems                   ║
+║  8. Missing DLL/framework errors      ║
+║  9. Boot loop / restart cycle         ║
+║ 10. Full system scan (comprehensive)  ║
+║                                         ║
+║  R. Run all repair tools (auto)       ║
+║  Q. Quit                               ║
+╚════════════════════════════════════════╝
+
+Select option [1-10, R, Q]: _
+```
+
+Each selection triggers targeted scanning and repair.
 
 ---
 
