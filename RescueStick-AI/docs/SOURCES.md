@@ -1,10 +1,32 @@
 # RescueStick AI - Offline Data Sources
 
-This document lists pre-bundled data sources for offline Windows repair.
+This document lists pre-bundled data sources for offline Windows repair - all MIT/GPL sources.
 
 ---
 
-## 1. Vanilla Registry Baselines
+## 1. Core System Tools (Linux Base)
+
+These tools are already open source and available in Linux repositories:
+
+| Tool | Package | License | Purpose |
+|------|---------|---------|---------|
+| ntfs-3g | ntfs-3g | GPLv2 | Read/write NTFS |
+| chntpw | chntpw | GPL | Registry editor |
+| hivex | libhivex-dev | LGPL | Hive parsing |
+| reglookup | reglookup | BSD | Registry search |
+| sleuthkit | sleuthkit | CPL | File system analysis |
+| testdisk | testdisk | GPL | Data recovery |
+| photorec | photorec | GPL | File recovery |
+
+**Install:**
+```bash
+# Debian/Ubuntu
+sudo apt-get install ntfs-3g chntpw libhivex-bin reglookup sleuthkit testdisk
+```
+
+---
+
+## 2. Vanilla Registry Baselines
 
 ### Primary Source: GitHub - AndrewRathbun/VanillaWindowsRegistryHives
 **URL:** https://github.com/AndrewRathbun/VanillaWindowsRegistryHives
@@ -36,28 +58,32 @@ git clone https://github.com/AndrewRathbun/VanillaWindowsRegistryHives.git
 
 ## 2. GitHub Repair Tools (MIT/GPL)
 
-### A. Windows Repair Script
+### A. Windows Repair Tool (MIT)
+**URL:** https://github.com/Mohabdo21/Windows-Repair-Tool
+**License:** MIT
+**Description:** Interactive menu-driven Windows system repair
+
+**Features:**
+- System Image Repair (DISM)
+- Windows Update Repair
+- SFC /scannow automation
+
+### B. Windows Repair Script (MIT)
 **URL:** https://github.com/kocken/WindowsRepairScript
 **License:** MIT
 **Description:** Repairs corrupt Windows OS files via SFC, DISM, CHKDSK
 
-**Features:**
-- SFC /scannow automation
-- DISM /RestoreHealth
-- CHKDSK execution
-
-### B. WinRepairTool
+### C. WinRepairTool
 **URL:** https://github.com/Javinator9889/WinRepairTool
-**License:** (check repo - appears open source)
+**License:** Open source
 **Description:** Windows application for solving common problems
 
 **Features:**
 - DISM with Windows Update source
 - System File Checker (SFC)
 - Offline mode (SFC + CHKDSK only)
-- Windows Defender management
 
-### C. Windows Maintenance Tool
+### D. Windows Maintenance Tool
 **URL:** https://github.com/ios12checker/Windows-Maintenance-Tool
 **Description:** Batch script for one-click Windows repairs and optimizations
 
@@ -67,39 +93,70 @@ git clone https://github.com/AndrewRathbun/VanillaWindowsRegistryHives.git
 - Disk cleanup
 - Service management
 
-### D. Windows-Verifier
-**URL:** https://github.com/JakeCarterDPM/WindowsVerifier
-**License:** (check repo)
-**Description:** Automates SFC /scannow and DISM repair
-
-### E. DISMTools
-**URL:** https://github.com/CodingWonders/DISMTools
-**License:** (check repo)
-**Description:** GUI front-end for DISM - manages WIM files
-
-**Features:**
-- DISM GUI
-- Image management
-- Source detection
-
-### F. Windows-Repair-Tool
-**URL:** https://github.com/Mohabdo21/Windows-Repair-Tool
+### E. Windows-11-Fix-Tweaks
+**URL:** https://github.com/kubaam/Windows-11-Fix-Tweaks
 **License:** MIT
-**Description:** Interactive menu-driven Windows repair
+**Description:** All-in-one Windows 11 fix and tweaks batch script
 
-**Features:**
-- System Image Repair
-- Windows Update Repair
-- DISM RestoreHealth
-
-### G. FixIt
+### F. FixIt
 **URL:** https://github.com/Ec-25/FixIt
 **License:** MIT
 **Description:** Lightweight Windows optimization and repair tool
 
+### G. WindowsVerifier
+**URL:** https://github.com/JakeCarterDPM/WindowsVerifier
+**Description:** Script that automates SFC /scannow and DISM repair
+
+### H. FixWin
+**URL:** https://github.com/Nozdormv/fixwin
+**Description:** Windows fix commands collection
+
+### I. DISMTools
+**URL:** https://github.com/CodingWonders/DISMTools
+**License:** Open source
+**Description:** GUI front-end for DISM
+
+### J. Reset Windows Update Tool (MIT)
+**URL:** https://github.com/ManuelGil/Script-Reset-Windows-Update-Tool
+**License:** MIT
+**Description:** Reset Windows Update components
+
 ---
 
-## 3. Microsoft Official Sources (for DISM/SFC)
+## 3. chntpw / Registry Tools
+
+### A. Official chntpw
+**URL:** https://github.com/minacle/chntpw
+**License:** GPL
+**Description:** Offline NT Password & Registry Editor
+
+### B. Rescatux chntpw
+**URL:** https://github.com/rescatux/chntpw
+**License:** GPL
+**Description:** Chntpw fork aimed at automatic interaction
+
+---
+
+## 4. File System & Recovery Tools
+
+### A. NTFS-3G
+**URL:** https://github.com/tuxera/ntfs-3g
+**License:** GPLv2
+**Description:** Read/write NTFS driver for Linux
+
+### B. hivex (LGPL)
+**URL:** https://github.com/libguestfs/hivex
+**License:** LGPL v2.1
+**Description:** Library for reading/writing Windows Registry hive files
+
+### C. The Sleuth Kit
+**URL:** https://github.com/sleuthkit/sleuthkit
+**License:** CPL
+**Description:** Forensic file system analysis
+
+---
+
+## 5. Microsoft Official Sources (for DISM/SFC)
 
 ### A. Windows Update (Online Source)
 - Uses Windows Update servers
@@ -120,7 +177,7 @@ git clone https://github.com/AndrewRathbun/VanillaWindowsRegistryHives.git
 
 ---
 
-## 4. WinGet Package Repository
+## 6. WinGet Package Repository
 
 **URL:** https://github.com/microsoft/winget-cli
 **License:** MIT
@@ -150,7 +207,7 @@ Microsoft.WindowsTerminal
 
 ---
 
-## 5. DLL Sources
+## 7. DLL Sources
 
 ### A. dll-files.com
 - Large DLL repository
@@ -166,7 +223,7 @@ Microsoft.WindowsTerminal
 
 ---
 
-## 6. USB Pre-load Checklist
+## 8. USB Pre-load Checklist
 
 To make RescueStick fully offline-capable:
 
@@ -208,7 +265,7 @@ To make RescueStick fully offline-capable:
 
 ---
 
-## 7. Tweaks Module (Separate)
+## 9. Tweaks Module (Separate)
 
 As requested - separate module for Windows tweaks:
 
@@ -225,21 +282,28 @@ As requested - separate module for Windows tweaks:
 
 ---
 
-## Summary Table
+## Summary Table (MIT/GPL Open Source Only)
 
 | Source | Type | License | Offline? |
 |--------|------|---------|----------|
 | VanillaWindowsRegistryHives | Registry baselines | MIT | ✅ Yes |
-| WindowsRepairScript | Repair tool | MIT | ✅ Yes |
-| WinRepairTool | Repair tool | Open | ✅ Yes |
-| Windows-Maintenance-Tool | Repair tool | Open | ✅ Yes |
-| DISMTools | DISM GUI | Open | ✅ Yes |
-| WinGet CLI | Package manager | MIT | ✅ Yes |
-| Microsoft Update Catalog | DLLs/updates | Microsoft | ❌ Online |
+| Mohabdo21/Windows-Repair-Tool | Repair tool | MIT | ✅ Yes |
+| kocken/WindowsRepairScript | Repair tool | MIT | ✅ Yes |
+| ios12checker/Windows-Maintenance-Tool | Repair tool | MIT | ✅ Yes |
+| kubaam/Windows-11-Fix-Tweaks | Tweaks | MIT | ✅ Yes |
+| Ec-25/FixIt | Repair tool | MIT | ✅ Yes |
+| Nozdormv/fixwin | Commands | Open | ✅ Yes |
+| Javinator9889/WinRepairTool | Repair tool | Open | ✅ Yes |
+| CodingWonders/DISMTools | DISM GUI | Open | ✅ Yes |
+| tuxera/ntfs-3g | NTFS driver | GPLv2 | ✅ Yes |
+| minacle/chntpw | Registry editor | GPL | ✅ Yes |
+| libguestfs/hivex | Hive library | LGPL | ✅ Yes |
+| sleuthkit/sleuthkit | FS analysis | CPL | ✅ Yes |
+| microsoft/winget-cli | Package manager | MIT | ✅ Yes |
 
 ---
 
-## 8. Additional Resources
+## Additional Resources
 
 ### Windows Repair Tools (GitHub)
 - **Windows Repair Toolbox** - https://github.com/DrDonk/everything
@@ -252,7 +316,7 @@ As requested - separate module for Windows tweaks:
 - NTFS-3G: https://www.tuxera.com/community/ntfs-3g-manual/
 
 ### Tools Reference
-- chntpw: https://github.com/背景下/changwin
+- chntpw: https://github.com/minacle/chntpw
 - Hivex: https://github.com/libguestfs/hivex
 - Testdisk/Photorec: https://www.cgsecurity.org/
 
