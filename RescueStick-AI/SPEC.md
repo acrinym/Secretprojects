@@ -64,11 +64,18 @@ Users select their issue from a menu:
 ║ 10. Full system scan (comprehensive)  ║
 ║                                         ║
 ║  R. Run all repair tools (auto)       ║
+║  H. Helpdesk / Knowledge Base         ║
 ║  Q. Quit                               ║
 ╚════════════════════════════════════════╝
 
-Select option [1-10, R, Q]: _
+Select option [1-10, R, H, Q]: _
 ```
+
+- **H** opens Helpdesk/KBA system for:
+  - Searchable knowledge base
+  - Tool documentation
+  - Troubleshooting guides
+  - Plain text NLP search (no AI required)
 
 Each selection triggers targeted scanning and repair.
 
@@ -276,15 +283,82 @@ Cross-domain pattern matching from Synoptic Executive:
   - **Bloatware** - Remove pre-installed apps
 - User chooses: repair-only OR repair + tweaks
 
-### 2.5 Speed Optimization
+### 2.6 Helpdesk & Knowledge Base System
 
-#### 2.5.1 RAM-First Architecture
+#### 2.6.1 Built-in KBAs (Knowledge Base Articles)
+- **Offline knowledge base** stored on USB
+- Each repair tool has associated KBAs explaining:
+  - What the issue is
+  - How the tool fixes it
+  - Common causes
+  - How to verify the fix worked
+- Plain-text NLP search for questions
+- No AI needed for basic lookups
+
+#### 2.6.2 Helpdesk Workflow
+```
+┌─────────────────────────────────────────────────────────────────┐
+│                    HELP DESK INTERFACE                          │
+├─────────────────────────────────────────────────────────────────┤
+│                                                                  │
+│  ┌────────────────┐    ┌────────────────┐    ┌───────────────┐  │
+│  │   Search KB   │ →  │   View Fix    │ →  │ Apply Fix +   │  │
+│  │   (NLP Text)  │    │   Steps       │    │ Verify        │  │
+│  └────────────────┘    └────────────────┘    └───────────────┘  │
+│         ↓                                                            │
+│  ┌───────────────────────────────────────────────────────────┐   │
+│  │              KBA Categories                               │   │
+│  │  - Boot issues    - Update failures    - DLL errors       │   │
+│  │  - Driver issues - Performance         - Network          │   │
+│  │  - Registry      - Security            - Custom...        │   │
+│  └───────────────────────────────────────────────────────────┘   │
+│                                                                  │
+│  ┌───────────────────────────────────────────────────────────┐   │
+│  │           "How to use our tools"                          │   │
+│  │  - Tool documentation                                     │   │
+│  │  - Symptom → Tool mapping                                  │   │
+│  │  - Command reference                                      │   │
+│  │  - Examples                                               │   │
+│  └───────────────────────────────────────────────────────────┘   │
+└─────────────────────────────────────────────────────────────────┘
+```
+
+#### 2.6.3 KBA Database Structure
+```
+/rescue-stick/kb/
+├── index.db              # SQLite search index
+├── articles/
+│   ├── boot/
+│   │   ├── 001-wont-boot.md
+│   │   ├── 002-bsod.md
+│   │   ├── 003-boot-loop.md
+│   │   └── ...
+│   ├── updates/
+│   │   ├── 001-update-failed.md
+│   │   └── ...
+│   ├── dlls/
+│   └── ...
+└── tools/
+    ├── tool-docs/        # How to use each diagnostic/repair tool
+    └── troubleshooting/ # General guides
+```
+
+#### 2.6.4 Search Engine (Plain Text NLP)
+- Simple keyword + fuzzy matching
+- No ML/AI required for basic search
+- Indexes: KBA titles, content, tool names, symptoms
+- Works fully offline
+- Can be upgraded to AI search later if needed
+
+### 2.7 Speed Optimization
+
+#### 2.7.1 RAM-First Architecture
 - Full OS runs in tmpfs
 - All analysis tools in RAM
 - Database caching in RAM
 - Parallel processing enabled
 
-#### 2.5.2 Caching Strategy
+#### 2.7.2 Caching Strategy
 - Local hash database (pre-built)
 - Smart download caching
 - Session persistence to USB
