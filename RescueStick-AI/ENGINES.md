@@ -56,11 +56,16 @@ sudo apt-get install libhivex-bin chntpw reglookup wine
 
 # Python packages
 pip install hivex construct pefile
+
+# WinGet (Windows Package Manager) for downloading packages
+# Download from: https://github.com/microsoft/winget-cli/releases
+# Put in: /rescue-stick/tools/winget/
 ```
 
 **Data needed:**
 - Registry baselines for each Windows version
 - DLL cache (msvcp140.dll, vcruntime140.dll, etc.)
+- WinGet package cache (.NET, VC++ runtimes)
 - Known-good registry values database
 
 **How to get baselines:**

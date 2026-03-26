@@ -183,8 +183,17 @@ Cross-domain pattern matching from Synoptic Executive:
 - DISM online source
 - Microsoft Catalog integration
 - Media Creation Tool integration (offline)
+- **WinGet (Windows Package Manager)** - Download frameworks, runtimes, apps
 
-#### 2.4.2 MSDT Integration
+#### 2.4.2 WinGet Integration
+- Microsoft Windows Package Manager (https://github.com/microsoft/winget-cli)
+- Download .NET Runtimes (6, 7, 8)
+- Download VC++ Runtimes (2015-2022)
+- Download other Microsoft components
+- Offline package download capability
+- Fallback when DISM sources unavailable
+
+#### 2.4.3 MSDT Integration
 - Deployment Image Servicing and Management (DISM)
 - System File Checker (SFC)
 - CHKDSK integration
@@ -256,18 +265,21 @@ Cross-domain pattern matching from Synoptic Executive:
 ├── network/
 │   ├── msdt_integration.py
 │   ├── windows_update_api.py
-│   └── download_manager.py
+│   ├── download_manager.py
+│   └── winget_integration.py     # WinGet for offline package downloads
 ├── ui/
 │   ├── terminal_interface.py
 │   └── web_dashboard.py (optional)
 ├── data/
 │   ├── hash_database.db
 │   ├── windows_baseline/
-│   └── logs/
+│   ├── dll_cache/                 # Cached DLLs for offline repair
+│   └── package_cache/            # WinGet packages
 └── tools/
     ├── chntpw
     ├── ntfs-3g
     ├── dism
+    ├── winget-cli                 # Windows Package Manager
     └── windows-repair-tools/
 ```
 

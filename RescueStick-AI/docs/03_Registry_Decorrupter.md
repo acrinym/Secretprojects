@@ -195,16 +195,68 @@ class RegistryParser:
             # ... etc
 ```
 
-### Step 4: DLL Files Integration
+### Step 4: DLL Files & Application Download Sources
 
+RescueStick needs multiple sources to download clean files, DLLs, frameworks, and applications:
+
+#### Source A: WinGet (Windows Package Manager)
 ```python
-# Get DLL files from dll-files.com or Microsoft
-# For missing DLLs, the repair engine should:
+# Use Microsoft's winget to download packages
+# https://github.com/microsoft/winget-cli
+
+class WinGetResolver:
+    """
+    Resolve missing applications and components via WinGet.
+    WinGet can install: .NET, VC++ Runtimes, and many applications.
+    """
+    
+    def __init__(self):
+        self.winget_path = "/rescue-stick/tools/winget"
+        
+    def search_package(self, query: str) -> List[Dict]:
+        """Search for packages in WinGet repository."""
+        # Run: winget search <query>
+        # Parse JSON output
+        pass
+    
+    def install_package(self, package_id: str, download_dir: str) -> bool:
+        """
+        Download package via WinGet.
+        
+        WinGet can download:
+        - .NET Runtime (Microsoft.DotNet.Runtime.8)
+        - VC++ Runtimes (Microsoft.VCRedist.x64.2015+)
+        - Many other applications
+        """
+        # Run: winget download <package_id> --download-directory <dir>
+        # Downloads .msix or .exe to specified directory
+        pass
+    
+    def download_to_cache(self, package_id: str) -> Optional[str]:
+        """Download package to local cache."""
+        pass
+```
+
+**How WinGet works:**
+```bash
+# Search for packages
+winget search dotnet
+
+# Download package (offline)
+winget download Microsoft.DotNet.Runtime.8 --download-directory ./cache
+
+# Install from cache (can run offline)
+winget install --cached ./cache
+```
+
+#### Source B: dll-files.com
+```python
+# Get DLL files from dll-files.com or whatever
 
 class DLLResolver:
     """
     Resolve missing DLL dependencies.
-    Sources: dll-files.com API, Microsoft, local cache
+    Sources: dll-files.com, Microsoft, local cache
     """
     
     def __init__(self):
@@ -215,7 +267,7 @@ class DLLResolver:
         """
         Find a DLL file from:
         1. Local cache (pre-downloaded DLLs)
-        2. dll-files.com API
+        2. dll-files.com
         3. Windows component store (DISM)
         4. Microsoft Update Catalog
         """
