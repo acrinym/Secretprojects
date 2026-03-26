@@ -200,6 +200,17 @@ Cross-domain pattern matching from Synoptic Executive:
 - BitLocker repair
 - Windows Recovery Environment (WinRE)
 
+#### 2.4.4 Tweaks Module (Optional)
+- **Separate module** from core repair functionality
+- Applied during or after repair based on user preference
+- Categories:
+  - **Privacy** - Disable telemetry, tracking
+  - **Performance** - Disable visual effects, services
+  - **Start Menu** - Pin/unpin, layout customization
+  - **UI** - Theme, colors, taskbar settings
+  - **Bloatware** - Remove pre-installed apps
+- User chooses: repair-only OR repair + tweaks
+
 ### 2.5 Speed Optimization
 
 #### 2.5.1 RAM-First Architecture
