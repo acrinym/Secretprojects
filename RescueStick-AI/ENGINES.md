@@ -147,17 +147,18 @@ Dependencies:
 ---
 
 ### ENGINE 01: Oracle
-**TODO - Need spec**
+**Done:** `/docs/01_Oracle.md`
 
 What it does:
-- Multiple diagnostic perspectives
+- Multiple diagnostic perspectives (6 angles)
 - "What would a sysadmin think?"
 - "What would malware look for?"
+- Forensic, performance, security views
 
 ---
 
 ### ENGINE 07: Memory
-**TODO - Need spec**
+**Done:** `/docs/07_Memory.md`
 
 What it does:
 - Session continuity
@@ -167,7 +168,7 @@ What it does:
 ---
 
 ### ENGINE 08: Learning
-**TODO - Need spec**
+**Done:** `/docs/08_Learning.md`
 
 What it does:
 - Track repair outcomes
@@ -177,7 +178,7 @@ What it does:
 ---
 
 ### ENGINE 09: Risk Assessment
-**TODO - Need spec**
+**Done:** `/docs/09_Risk_Assessment.md`
 
 What it does:
 - Evaluate repair risk
@@ -192,30 +193,44 @@ What it does:
 1. Engine 02 (File Scanner) - [SPEC DONE](docs/02_File_Scanner.md) - core functionality
 2. Engine 03 (Registry) - [SPEC DONE](docs/03_Registry_Decorrupter.md) - core functionality
 3. Engine 04 (Event Log) - [SPEC DONE](docs/04_Event_Log_Engine.md)
-4. Engine 05 (Hash Verifier) - tied to 02
-5. Engine 06 (Synthesis) - makes decisions
-6. Engine 00 (Safety) - prevents bricked systems
+4. Engine 05 (Hash Verifier) - [SPEC DONE](docs/05_Hash_Verifier.md) - tied to 02
+5. Engine 06 (Synthesis) - [SPEC DONE](docs/06_Diagnostic_Synthesis.md) - makes decisions
+6. Engine 00 (Safety) - [SPEC DONE](docs/00_Safety_Evaluation.md) - prevents bricked systems
 
 **Phase 2 (Intelligence):**
-6. Engine 04 (Event Logs)
-7. Engine 01 (Oracle)
+7. Engine 01 (Oracle) - [SPEC DONE](docs/01_Oracle.md) - multiple perspectives
 
 **Phase 3 (Polish):**
-8. Engine 07 (Memory)
-9. Engine 08 (Learning)
-10. Engine 09 (Risk Assessment)
+8. Engine 07 (Memory) - [SPEC DONE](docs/07_Memory.md) - session continuity
+9. Engine 08 (Learning) - [SPEC DONE](docs/08_Learning.md) - outcome tracking
+10. Engine 09 (Risk Assessment) - [SPEC DONE](docs/09_Risk_Assessment.md) - repair risk
 
 ---
 
-## How to Contribute
+## Documentation Files
 
-1. Pick an engine marked "TODO"
-2. Create `/docs/{XX}_{Engine_Name}.md`
-3. Document what it does, how to build it
-4. List dependencies and data needed
-5. Commit to repo
+| File | Purpose |
+|------|---------|
+| [SPEC.md](../SPEC.md) | Main specification |
+| [ENGINES.md](./ENGINES.md) | Build order and dependencies |
+| [docs/](./docs/) | Individual engine specs (10 complete) |
+| [docs/BUILD.md](./docs/BUILD.md) | How to build RescueStick |
+| [docs/DEPLOYMENT.md](./docs/DEPLOYMENT.md) | Deployment options (USB, Medicat, ISO) |
+| [docs/TROUBLESHOOTING.md](./docs/TROUBLESHOOTING.md) | Common issues and fixes |
+| [docs/SOURCES.md](./docs/SOURCES.md) | Offline data sources |
 
 ---
 
-*Last Updated: 2026-03-25*
-*Build Status: 2/10 engines specified*
+## All Engine Specs Complete ✅
+
+All 10 engines have full specifications with:
+- What it does
+- How to build (step-by-step code)
+- Dependencies (apt/pip)
+- Data needed
+- Testing instructions
+
+---
+
+*Last Updated: 2026-03-26*
+*Build Status: 10/10 engines specified ✅*

@@ -29,7 +29,10 @@ AI-powered Windows rescue system on a USB stick. Runs in RAM, diagnoses issues, 
 - [SPEC.md](SPEC.md) - Main specification
 - [ENGINES.md](ENGINES.md) - Build order and dependencies
 - [docs/](docs/) - Individual engine specifications (10 complete)
-- [docs/SOURCES.md](docs/SOURCES.md) - Offline data sources (registry baselines, GitHub tools, WinGet)
+- [docs/SOURCES.md](docs/SOURCES.md) - Offline data sources
+- [docs/BUILD.md](docs/BUILD.md) - How to build
+- [docs/DEPLOYMENT.md](docs/DEPLOYMENT.md) - USB/Medicat/ISO deployment
+- [docs/TROUBLESHOOTING.md](docs/TROUBLESHOOTING.md) - Common issues
 
 ## Why Better Than MSDT/SFC/DISM Alone
 

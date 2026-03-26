@@ -239,5 +239,24 @@ As requested - separate module for Windows tweaks:
 
 ---
 
-*Last Updated: 2026-03-25*
+## 8. Additional Resources
+
+### Windows Repair Tools (GitHub)
+- **Windows Repair Toolbox** - https://github.com/DrDonk/everything
+- **System Utilities** - https://github.com/moonbuggy/maintenance
+- **Win10 SE** - https://github.com/ChrisInTX/Win10SE
+
+### Documentation
+- Microsoft DISM: https://docs.microsoft.com/en-us/windows-hardware/manufacture/desktop/
+- Windows Registry: https://learn.microsoft.com/en-us/windows/win32/sysinfo/registry-hives
+- NTFS-3G: https://www.tuxera.com/community/ntfs-3g-manual/
+
+### Tools Reference
+- chntpw: https://github.com/背景下/changwin
+- Hivex: https://github.com/libguestfs/hivex
+- Testdisk/Photorec: https://www.cgsecurity.org/
+
+---
+
+*Last Updated: 2026-03-26*
 *Sources verified for offline use*
