@@ -8,16 +8,16 @@ This document lists all engines needed, their purposes, and what's required to b
 
 | # | Engine | Purpose | Status | Priority |
 |---|--------|---------|--------|----------|
-| 00 | Safety Evaluation | Pre-repair safety checks, veto dangerous operations | - | P0 |
-| 01 | Oracle | Multiple diagnostic perspectives | - | P1 |
+| 00 | Safety Evaluation | Pre-repair safety checks, veto dangerous operations | [SPEC DONE](docs/00_Safety_Evaluation.md) | P0 |
+| 01 | Oracle | Multiple diagnostic perspectives | [SPEC DONE](docs/01_Oracle.md) | P1 |
 | 02 | File Scanner | System file hash verification | [SPEC DONE](docs/02_File_Scanner.md) | P0 |
 | 03 | Registry Parser | Registry hive analysis & repair | [SPEC DONE](docs/03_Registry_Decorrupter.md) | P0 |
 | 04 | Event Log Engine | Windows event log parsing | [SPEC DONE](docs/04_Event_Log_Engine.md) | P1 |
-| 05 | Hash Verifier | Integrity checking against baselines | TODO | P1 |
-| 06 | Diagnostic Synthesis | Integrate all findings | TODO | P1 |
-| 07 | Memory | Session continuity | TODO | P2 |
-| 08 | Learning | Outcome tracking, improve over time | TODO | P2 |
-| 09 | Risk Assessment | Repair risk evaluation | TODO | P2 |
+| 05 | Hash Verifier | Integrity checking against baselines | [SPEC DONE](docs/05_Hash_Verifier.md) | P1 |
+| 06 | Diagnostic Synthesis | Integrate all findings | [SPEC DONE](docs/06_Diagnostic_Synthesis.md) | P1 |
+| 07 | Memory | Session continuity | [SPEC DONE](docs/07_Memory.md) | P2 |
+| 08 | Learning | Outcome tracking, improve over time | [SPEC DONE](docs/08_Learning.md) | P2 |
+| 09 | Risk Assessment | Repair risk evaluation | [SPEC DONE](docs/09_Risk_Assessment.md) | P2 |
 
 ---
 
@@ -98,44 +98,46 @@ Data needed:
 ---
 
 ### ENGINE 05: Hash Verifier
-**TODO - Need spec**
+**Done:** `/docs/05_Hash_Verifier.md`
 
 What it does:
-- Compare scanned hashes to baseline
-- Score file integrity
-- Prioritize repairs
+- Compare scanned hashes to baseline databases
+- Score file integrity (0-100%)
+- Prioritize repairs by severity
 
 Dependencies:
-- SQLite for hash database
+- SQLite3 (built-in)
+- pefile (for version detection)
 
 Data needed:
-- All baseline databases from Engine 02
+- Baseline databases (from Engine 02)
 
 ---
 
 ### ENGINE 06: Diagnostic Synthesis
-**TODO - Need spec**
+**Done:** `/docs/06_Diagnostic_Synthesis.md`
 
 What it does:
-- Combine all engine findings
+- Integrate findings from all engines
+- Correlate related issues
 - Generate repair strategy
-- Calculate confidence scores
 
 Dependencies:
-- All other engines
+- All other engines' outputs
 
 ---
 
 ### ENGINE 00: Safety Evaluation
-**TODO - Need spec**
+**Done:** `/docs/00_Safety_Evaluation.md`
 
 What it does:
-- Check if repair is safe
+- Pre-repair safety checks
 - Veto dangerous operations
-- Require user confirmation for risky repairs
+- Require user confirmation
+- Create backups before changes
 
 Dependencies:
-- Rule database
+- Pre-repair backup system
 
 ---
 
