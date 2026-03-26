@@ -9,6 +9,55 @@
 
 ---
 
+## Use Case: In-Flight Repair
+
+RescueStick is designed for the scenario where:
+1. **Windows fails to boot** - BSOD, shutdown during boot, boot errors
+2. **No backup available** - Either no service purchased or backup not possible in current state
+3. **Need surgical repair** - Fix specific issues without wiping entire OS
+4. **Data preservation** - Keep user files and settings intact
+
+### How It Works
+
+```
+Windows System Failure
+         ↓
+   Boot from RescueStick USB (Linux in RAM)
+         ↓
+   Mount Windows (read-only for safety)
+         ↓
+   AI Diagnostics:
+   - File hash verification (corrupted/missing files)
+   - Registry analysis (broken keys/hives)
+   - Event log parsing (error patterns)
+   - Boot configuration analysis
+         ↓
+   Generate Repair Strategy
+         ↓
+   Execute Repairs:
+   - Replace corrupted files
+   - Fix registry issues
+   - Repair boot config
+   - (Optional) Apply tweaks
+         ↓
+   Reboot to Repaired Windows
+```
+
+### Not a Backup Replacement
+
+> RescueStick is **NOT** a substitute for proper backups. It repairs *current* system state.
+
+For best results, users should have:
+- Regular Windows backups (system image, file backups)
+- Restore points enabled
+
+RescueStick is the **fallback** when:
+- No backup available
+- Backup is also corrupted
+- Quick repair needed (can't wait for restore)
+
+---
+
 ## 1. Core Architecture
 
 ### 1.1 Platform
