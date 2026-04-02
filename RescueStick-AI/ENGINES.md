@@ -1,6 +1,6 @@
 # RescueStick AI - Engine Build Order & Dependencies
 
-This document lists all engines needed, their purposes, and what's required to build each one.
+This document lists all 20 engines needed, their purposes, and what's required to build each one.
 
 ---
 
@@ -11,13 +11,24 @@ This document lists all engines needed, their purposes, and what's required to b
 | 00 | Safety Evaluation | Pre-repair safety checks, veto dangerous operations | [SPEC DONE](docs/00_Safety_Evaluation.md) | P0 |
 | 01 | Oracle | Multiple diagnostic perspectives | [SPEC DONE](docs/01_Oracle.md) | P1 |
 | 02 | File Scanner | System file hash verification | [SPEC DONE](docs/02_File_Scanner.md) | P0 |
-| 03 | Registry Parser | Registry hive analysis & repair | [SPEC DONE](docs/03_Registry_Decorrupter.md) | P0 |
+| 03 | Registry Decorrupter | Registry hive analysis & repair | [SPEC DONE](docs/03_Registry_Decorrupter.md) | P0 |
 | 04 | Event Log Engine | Windows event log parsing | [SPEC DONE](docs/04_Event_Log_Engine.md) | P1 |
 | 05 | Hash Verifier | Integrity checking against baselines | [SPEC DONE](docs/05_Hash_Verifier.md) | P1 |
 | 06 | Diagnostic Synthesis | Integrate all findings | [SPEC DONE](docs/06_Diagnostic_Synthesis.md) | P1 |
 | 07 | Memory | Session continuity | [SPEC DONE](docs/07_Memory.md) | P2 |
 | 08 | Learning | Outcome tracking, improve over time | [SPEC DONE](docs/08_Learning.md) | P2 |
 | 09 | Risk Assessment | Repair risk evaluation | [SPEC DONE](docs/09_Risk_Assessment.md) | P2 |
+| 10 | Snapshot | Time machine / instant rollback | IN SPEC | P1 |
+| 11 | Crowd Intel | Anonymous pattern sharing | IN SPEC | P3 |
+| 12 | Hardware Check | Memory/disk/CPU diagnostics | IN SPEC | P2 |
+| 13 | Malware Guard | ClamAV malware integration | IN SPEC | P1 |
+| 14 | Recovery Console | Windows RE-like environment | IN SPEC | P1 |
+| 15 | Driver Cache | Offline driver database | IN SPEC | P2 |
+| 16 | AI Assistant | Natural language repair | IN SPEC | P2 |
+| 17 | Live Patch | Hot-patch without reboot | IN SPEC | P3 |
+| 18 | Multi-Dashboard | Manage multiple PCs | IN SPEC | P3 |
+| 19 | Auto Flows | Pre-built repair sequences | IN SPEC | P1 |
+| 20 | Media Gen | Custom rescue media builder | IN SPEC | P3 |
 
 ---
 
@@ -233,4 +244,4 @@ All 10 engines have full specifications with:
 ---
 
 *Last Updated: 2026-03-26*
-*Build Status: 10/10 engines specified ✅*
+*Build Status: 10/20 engines specified (10 in docs/, 11 in SPEC.md)*
