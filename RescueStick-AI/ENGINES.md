@@ -25,10 +25,10 @@ This document lists all 20 engines needed, their purposes, and what's required t
 | 14 | Recovery Console | Windows RE-like environment | [SPEC DONE](docs/14_Recovery_Console.md) | P1 |
 | 15 | Driver Cache | Offline driver database | [SPEC DONE](docs/15_Driver_Cache.md) | P2 |
 | 16 | AI Assistant | Natural language repair | [SPEC DONE](docs/16_AI_Assistant.md) | P2 |
-| 17 | Live Patch | Hot-patch without reboot | IN SPEC | P3 |
-| 18 | Multi-Dashboard | Manage multiple PCs | IN SPEC | P3 |
+| 17 | Live Patch | Hot-patch without reboot | [SPEC DONE](docs/17_Live_Patch.md) | P3 |
+| 18 | Multi-Dashboard | Manage multiple PCs | [SPEC DONE](docs/18_Multi_Dashboard.md) | P3 |
 | 19 | Auto Flows | Pre-built repair sequences | [SPEC DONE](docs/19_Auto_Flows.md) | P1 |
-| 20 | Media Gen | Custom rescue media builder | IN SPEC | P3 |
+| 20 | Media Gen | Custom rescue media builder | [SPEC DONE](docs/20_Media_Gen.md) | P3 |
 
 ---
 
@@ -243,5 +243,5 @@ All 10 engines have full specifications with:
 
 ---
 
-*Last Updated: 2026-03-26*
-*Build Status: 17/20 engines specified (10 + 7 new in docs/)*
+*All 20 engines specified ✅*  
+*License: MIT - Use freely, commercialize if desired*

@@ -30,29 +30,26 @@ AI-powered Windows rescue system on a USB stick. Runs in RAM, diagnoses issues, 
 | 14 | Recovery Console | ✅ SPEC DONE | docs/14_Recovery_Console.md |
 | 15 | Driver Cache | ✅ SPEC DONE | docs/15_Driver_Cache.md |
 | 16 | AI Assistant | ✅ SPEC DONE | docs/16_AI_Assistant.md |
-| 17 | Live Patch | 🔜 IN PROGRESS | |
-| 18 | Multi-Dashboard | 🔜 IN PROGRESS | |
+| 17 | Live Patch | ✅ SPEC DONE | docs/17_Live_Patch.md |
+| 18 | Multi-Dashboard | ✅ SPEC DONE | docs/18_Multi_Dashboard.md |
 | 19 | Auto Flows | ✅ SPEC DONE | docs/19_Auto_Flows.md |
-| 20 | Media Gen | 🔜 IN PROGRESS | |
+| 20 | Media Gen | ✅ SPEC DONE | docs/20_Media_Gen.md |
 
 ## Documentation
 
 - [SPEC.md](SPEC.md) - Main specification (20 engines)
 - [ENGINES.md](ENGINES.md) - Build order and dependencies
-- [docs/](docs/) - Individual engine specifications (10 complete, more coming)
+- [docs/](docs/) - Individual engine specifications (20 complete)
 - [docs/SOURCES.md](docs/SOURCES.md) - Offline data sources (MIT/GPL)
 - [docs/BUILD.md](docs/BUILD.md) - How to build
 - [docs/DEPLOYMENT.md](docs/DEPLOYMENT.md) - USB/Medicat/ISO deployment
 - [docs/TROUBLESHOOTING.md](docs/TROUBLESHOOTING.md) - Common issues
 
-## Why Better Than MSDT/SFC/DISM Alone
+## All Code is MIT Licensed
 
-- **AI reads everything** → knows exactly what's broken
-- **Granular repair** → no wiping, surgical fixes
-- **Runs in RAM** → no speed issues
-- **Adaptive confidence** → learns from outcomes
-- **Multi-perspective diagnosis** → Oracle engine sees what others miss
+Use freely for any purpose. Commercialize if desired.
 
 ---
 
 *Project started: 2026-03-25*
+*All 20 engines specified ✅*
