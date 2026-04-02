@@ -23,17 +23,17 @@ AI-powered Windows rescue system on a USB stick. Runs in RAM, diagnoses issues, 
 | 07 | Memory | ✅ SPEC DONE |
 | 08 | Learning | ✅ SPEC DONE |
 | 09 | Risk Assessment | ✅ SPEC DONE |
-| 10 | Snapshot (Time Machine) | ✅ SPEC DONE |
-| 11 | Crowd Intel | ✅ SPEC DONE |
-| 12 | Hardware Check | ✅ SPEC DONE |
-| 13 | Malware Guard | ✅ SPEC DONE |
-| 14 | Recovery Console | ✅ SPEC DONE |
-| 15 | Driver Cache | ✅ SPEC DONE |
-| 16 | AI Assistant | ✅ SPEC DONE |
-| 17 | Live Patch | ✅ SPEC DONE |
-| 18 | Multi-Dashboard | ✅ SPEC DONE |
-| 19 | Auto Flows | ✅ SPEC DONE |
-| 20 | Media Gen | ✅ SPEC DONE |
+| 10 | Snapshot (Time Machine) | ✅ SPEC DONE | docs/10_Snapshot.md |
+| 11 | Crowd Intel | ✅ SPEC DONE | docs/11_Crowd_Intel.md |
+| 12 | Hardware Check | ✅ SPEC DONE | docs/12_Hardware_Check.md |
+| 13 | Malware Guard | 🔜 IN PROGRESS | |
+| 14 | Recovery Console | 🔜 IN PROGRESS | |
+| 15 | Driver Cache | 🔜 IN PROGRESS | |
+| 16 | AI Assistant | 🔜 IN PROGRESS | |
+| 17 | Live Patch | 🔜 IN PROGRESS | |
+| 18 | Multi-Dashboard | 🔜 IN PROGRESS | |
+| 19 | Auto Flows | ✅ SPEC DONE | docs/19_Auto_Flows.md |
+| 20 | Media Gen | 🔜 IN PROGRESS | |
 
 ## Documentation
 

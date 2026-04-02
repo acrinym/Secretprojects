@@ -18,16 +18,16 @@ This document lists all 20 engines needed, their purposes, and what's required t
 | 07 | Memory | Session continuity | [SPEC DONE](docs/07_Memory.md) | P2 |
 | 08 | Learning | Outcome tracking, improve over time | [SPEC DONE](docs/08_Learning.md) | P2 |
 | 09 | Risk Assessment | Repair risk evaluation | [SPEC DONE](docs/09_Risk_Assessment.md) | P2 |
-| 10 | Snapshot | Time machine / instant rollback | IN SPEC | P1 |
-| 11 | Crowd Intel | Anonymous pattern sharing | IN SPEC | P3 |
-| 12 | Hardware Check | Memory/disk/CPU diagnostics | IN SPEC | P2 |
+| 10 | Snapshot | Time machine / instant rollback | [SPEC DONE](docs/10_Snapshot.md) | P1 |
+| 11 | Crowd Intel | Anonymous pattern sharing | [SPEC DONE](docs/11_Crowd_Intel.md) | P3 |
+| 12 | Hardware Check | Memory/disk/CPU diagnostics | [SPEC DONE](docs/12_Hardware_Check.md) | P2 |
 | 13 | Malware Guard | ClamAV malware integration | IN SPEC | P1 |
 | 14 | Recovery Console | Windows RE-like environment | IN SPEC | P1 |
 | 15 | Driver Cache | Offline driver database | IN SPEC | P2 |
 | 16 | AI Assistant | Natural language repair | IN SPEC | P2 |
 | 17 | Live Patch | Hot-patch without reboot | IN SPEC | P3 |
 | 18 | Multi-Dashboard | Manage multiple PCs | IN SPEC | P3 |
-| 19 | Auto Flows | Pre-built repair sequences | IN SPEC | P1 |
+| 19 | Auto Flows | Pre-built repair sequences | [SPEC DONE](docs/19_Auto_Flows.md) | P1 |
 | 20 | Media Gen | Custom rescue media builder | IN SPEC | P3 |
 
 ---
@@ -244,4 +244,4 @@ All 10 engines have full specifications with:
 ---
 
 *Last Updated: 2026-03-26*
-*Build Status: 10/20 engines specified (10 in docs/, 11 in SPEC.md)*
+*Build Status: 13/20 engines specified (10 + 3 new in docs/)*
