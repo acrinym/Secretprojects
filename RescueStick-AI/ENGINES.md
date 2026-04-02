@@ -21,10 +21,10 @@ This document lists all 20 engines needed, their purposes, and what's required t
 | 10 | Snapshot | Time machine / instant rollback | [SPEC DONE](docs/10_Snapshot.md) | P1 |
 | 11 | Crowd Intel | Anonymous pattern sharing | [SPEC DONE](docs/11_Crowd_Intel.md) | P3 |
 | 12 | Hardware Check | Memory/disk/CPU diagnostics | [SPEC DONE](docs/12_Hardware_Check.md) | P2 |
-| 13 | Malware Guard | ClamAV malware integration | IN SPEC | P1 |
-| 14 | Recovery Console | Windows RE-like environment | IN SPEC | P1 |
-| 15 | Driver Cache | Offline driver database | IN SPEC | P2 |
-| 16 | AI Assistant | Natural language repair | IN SPEC | P2 |
+| 13 | Malware Guard | ClamAV malware integration | [SPEC DONE](docs/13_Malware_Guard.md) | P1 |
+| 14 | Recovery Console | Windows RE-like environment | [SPEC DONE](docs/14_Recovery_Console.md) | P1 |
+| 15 | Driver Cache | Offline driver database | [SPEC DONE](docs/15_Driver_Cache.md) | P2 |
+| 16 | AI Assistant | Natural language repair | [SPEC DONE](docs/16_AI_Assistant.md) | P2 |
 | 17 | Live Patch | Hot-patch without reboot | IN SPEC | P3 |
 | 18 | Multi-Dashboard | Manage multiple PCs | IN SPEC | P3 |
 | 19 | Auto Flows | Pre-built repair sequences | [SPEC DONE](docs/19_Auto_Flows.md) | P1 |
@@ -244,4 +244,4 @@ All 10 engines have full specifications with:
 ---
 
 *Last Updated: 2026-03-26*
-*Build Status: 13/20 engines specified (10 + 3 new in docs/)*
+*Build Status: 17/20 engines specified (10 + 7 new in docs/)*

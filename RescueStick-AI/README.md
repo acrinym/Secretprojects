@@ -26,10 +26,10 @@ AI-powered Windows rescue system on a USB stick. Runs in RAM, diagnoses issues, 
 | 10 | Snapshot (Time Machine) | ✅ SPEC DONE | docs/10_Snapshot.md |
 | 11 | Crowd Intel | ✅ SPEC DONE | docs/11_Crowd_Intel.md |
 | 12 | Hardware Check | ✅ SPEC DONE | docs/12_Hardware_Check.md |
-| 13 | Malware Guard | 🔜 IN PROGRESS | |
-| 14 | Recovery Console | 🔜 IN PROGRESS | |
-| 15 | Driver Cache | 🔜 IN PROGRESS | |
-| 16 | AI Assistant | 🔜 IN PROGRESS | |
+| 13 | Malware Guard | ✅ SPEC DONE | docs/13_Malware_Guard.md |
+| 14 | Recovery Console | ✅ SPEC DONE | docs/14_Recovery_Console.md |
+| 15 | Driver Cache | ✅ SPEC DONE | docs/15_Driver_Cache.md |
+| 16 | AI Assistant | ✅ SPEC DONE | docs/16_AI_Assistant.md |
 | 17 | Live Patch | 🔜 IN PROGRESS | |
 | 18 | Multi-Dashboard | 🔜 IN PROGRESS | |
 | 19 | Auto Flows | ✅ SPEC DONE | docs/19_Auto_Flows.md |
