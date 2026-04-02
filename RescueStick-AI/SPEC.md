@@ -507,5 +507,405 @@ Cross-domain pattern matching from Synoptic Executive:
 
 ---
 
-*Document Version: 1.0*  
+## 9. Advanced Features (Category-Defining)
+
+### 9.1 Time Machine - Snapshot System
+
+**Engine: 10_snapshot**
+
+Take system snapshots before any repair - instant rollback capability.
+
+```
+┌─────────────────────────────────────────────────────────────────┐
+│                    SNAPSHOT SYSTEM                              │
+├─────────────────────────────────────────────────────────────────┤
+│                                                                  │
+│  Before Repair:                                                │
+│    ┌─────────────┐    ┌─────────────┐    ┌─────────────┐      │
+│    │   Quick    │ →  │   Full     │ →  │   Custom   │      │
+│    │  Snapshot  │    │  Snapshot  │    │  Snapshot  │      │
+│    │   (5 min)  │    │  (15 min)  │    │            │      │
+│    └─────────────┘    └─────────────┘    └─────────────┘      │
+│         ↓                  ↓                  ↓                  │
+│    Registry +        + File Hashes     + User Selects           │
+│    Boot Config       + Drivers         + Specific Areas         │
+│                                                                  │
+│  Storage:                                                        │
+│    - USB: 32GB per snapshot (compressed)                      │
+│    - Incremental: Only store deltas                            │
+│                                                                  │
+│  Restore:                                                       │
+│    - 1-click rollback                                          │
+│    - Selective restore (registry only, etc.)                  │
+│                                                                  │
+└─────────────────────────────────────────────────────────────────┘
+```
+
+**What it captures:**
+- Registry hives (SYSTEM, SOFTWARE, SAM, SECURITY)
+- Boot configuration data (BCD)
+- Critical system files (DLLs, drivers, EXEs)
+- Windows Update components state
+- Service configurations
+
+### 9.2 Crowd-Sourced Intelligence
+
+**Engine: 11_crowd_intel**
+
+Anonymous repair pattern sharing (opt-in, privacy-preserving).
+
+```
+┌─────────────────────────────────────────────────────────────────┐
+│                  CROWD INTELLIGENCE                             │
+├─────────────────────────────────────────────────────────────────┤
+│                                                                  │
+│  Pattern Matching:                                             │
+│    "Your error: 0x80070005"                                    │
+│       ↓                                                         │
+│    "Similar to 847 other users solved by:"                     │
+│       → DISM /RestoreHealth (73% success)                     │
+│       → Registry restore (21% success)                         │
+│       → Clean boot (6% success)                               │
+│                                                                  │
+│  Anonymous Stats:                                               │
+│    - What repairs worked for specific error codes              │
+│    - Which Windows versions affected                           │
+│    - Time-of-day patterns                                      │
+│                                                                  │
+│  Privacy:                                                       │
+│    - No PII transmitted                                        │
+│    - Only error codes + outcome                                │
+│    - Local aggregation                                         │
+│                                                                  │
+└─────────────────────────────────────────────────────────────────┘
+```
+
+**Sources:** Anonymized data from users who opt-in to sharing.
+
+### 9.3 Hardware Diagnostics
+
+**Engine: 12_hardware_check**
+
+Comprehensive hardware health assessment.
+
+```
+┌─────────────────────────────────────────────────────────────────┐
+│                  HARDWARE DIAGNOSTICS                           │
+├─────────────────────────────────────────────────────────────────┤
+│                                                                  │
+│ Memory Test:                                                    │
+│   - memtest86+ (full pass)                                     │
+│   - Quick test (5 min)                                         │
+│   - Bad sector detection                                       │
+│                                                                  │
+│ Disk Health:                                                    │
+│   - SMART status                                               │
+│   - Surface scan                                               │
+│   - Health prediction                                          │
+│                                                                  │
+│ CPU:                                                            │
+│   - Temperature monitoring                                      │
+│   - Stress test                                                │
+│   - Cache validation                                           │
+│                                                                  │
+│ Power:                                                          │
+│   - Battery health (laptop)                                   │
+│   - PSU load testing                                           │
+│   - Voltage fluctuation detection                              │
+│                                                                  │
+└─────────────────────────────────────────────────────────────────┘
+```
+
+### 9.4 Malware/Recovery Integration
+
+**Engine: 13_malware_guard**
+
+ClamAV + Malwarebytes integration for rescue scenarios.
+
+```
+┌─────────────────────────────────────────────────────────────────┐
+│                  MALWARE RECOVERY                              │
+├─────────────────────────────────────────────────────────────────┤
+│                                                                  │
+│ Pre-Repair Scan:                                               │
+│   - Quarantine infected files before repair                    │
+│   - Prevent repair from spreading malware                      │
+│                                                                  │
+│ Recovery Mode:                                                  │
+│   - Boot-safe mode scanner                                     │
+│   - Rootkit detection                                          │
+│   - Unhide hidden files                                        │
+│                                                                  │
+│ Post-Repair Verify:                                             │
+│   - Re-scan after repairs                                      │
+│   - Verify system files weren't replaced with infected ones    │
+│                                                                  │
+│ Tools:                                                          │
+│   - ClamAV (GPL)                                               │
+│   - chkrootkit (GPL)                                           │
+│   - rkhunter (GPL)                                             │
+│                                                                  │
+└─────────────────────────────────────────────────────────────────┘
+```
+
+### 9.5 Recovery Console
+
+**Engine: 14_recovery_console**
+
+Built-in Windows RE-like recovery environment.
+
+```
+┌─────────────────────────────────────────────────────────────────┐
+│                  RECOVERY CONSOLE                              │
+├─────────────────────────────────────────────────────────────────┤
+│                                                                  │
+│ Accessible from main menu:                                     │
+│                                                                  │
+│   [R] → Launch Recovery Console                                │
+│                                                                  │
+│ Features:                                                       │
+│   - Command prompt (full admin)                                │
+│   - Registry editor (offline)                                  │
+│   - Disk management                                            │
+│   - System restore                                             │
+│   - Driver management                                          │
+│   - Network recovery                                           │
+│   - Startup repair                                             │
+│   - Command-line disk check                                    │
+│                                                                  │
+│ Similar to Windows RE but runs from RescueStick                │
+│                                                                  │
+└─────────────────────────────────────────────────────────────────┘
+```
+
+### 9.6 Driver Repository
+
+**Engine: 15_driver_cache**
+
+Pre-cached driver database for offline installations.
+
+```
+┌─────────────────────────────────────────────────────────────────┐
+│                  DRIVER REPOSITORY                             │
+├─────────────────────────────────────────────────────────────────┤
+│                                                                  │
+│ Pre-loaded on USB:                                             │
+│   - Common network drivers (Intel, Realtek, Broadcom)          │
+│   - Storage controllers (NVMe, SATA, RAID)                     │
+│   - Chipset drivers                                            │
+│   - Video drivers (basic)                                       │
+│                                                                  │
+│ Offline Install:                                               │
+│   pnputil -i -a driver.inf                                     │
+│                                                                  │
+│ Auto-detect:                                                   │
+│   - Scan for unknown devices                                   │
+│   - Suggest matching drivers from cache                         │
+│   - Priority: cached → winget → download                       │
+│                                                                  │
+└─────────────────────────────────────────────────────────────────┘
+```
+
+### 9.7 AI Conversation Interface
+
+**Engine: 16_ai_assistant**
+
+Natural language repair assistant.
+
+```
+┌─────────────────────────────────────────────────────────────────┐
+│                  AI ASSISTANT                                  │
+├─────────────────────────────────────────────────────────────────┤
+│                                                                  │
+│ User: "My电脑 keeps restarting when I turn it on"             │
+│                                                                  │
+│ AI:  "That sounds like a boot loop. Let me scan your system."  │
+│      → [Scanning boot files, event logs, registry...]          │
+│                                                                  │
+│      "Found: corrupted winlogon.exe, missing registry keys"    │
+│      "Recommended: Replace winlogon.exe + fix registry"         │
+│                                                                  │
+│ User: "Will I lose my files?"                                  │
+│                                                                  │
+│ AI: "No, this repair only touches system files. Your data"     │
+│     "is safe. I can show you exactly what will change."         │
+│                                                                  │
+│ User: "OK fix it"                                              │
+│                                                                  │
+│ AI: [Executes repair with progress updates]                    │
+│     "Done! Your system should boot now. want me to verify?"    │
+│                                                                  │
+└─────────────────────────────────────────────────────────────────┘
+```
+
+**Interface Options:**
+- Terminal chat (text-based)
+- Voice input (optional)
+- Text-to-speech for accessibility
+
+### 9.8 Live Patch System
+
+**Engine: 17_live_patch**
+
+Hot-patch Windows without reboot using in-memory modifications.
+
+```
+┌─────────────────────────────────────────────────────────────────┐
+│                  LIVE PATCH SYSTEM                             │
+├─────────────────────────────────────────────────────────────────┤
+│                                                                  │
+│ Use Cases:                                                      │
+│   - Patch DLLs without reboot                                  │
+│   - Fix registry without restart                              │
+│   - Update drivers live                                        │
+│   - Apply security patches without downtime                    │
+│                                                                  │
+│ How It Works:                                                   │
+│   - Load target DLL into memory                                │
+│   - Apply patches to memory                                    │
+│   - Redirect function pointers                                 │
+│   - No disk write until verified stable                        │
+│                                                                  │
+│ Safety:                                                         │
+│   - Backup original before patch                               │
+│   - Test patch in isolated process first                       │
+│   - Rollback on any instability                                │
+│                                                                  │
+└─────────────────────────────────────────────────────────────────┘
+```
+
+### 9.9 Multi-System Dashboard
+
+**Engine: 18_multi_dashboard**
+
+Manage multiple Windows installations from one RescueStick.
+
+```
+┌─────────────────────────────────────────────────────────────────┐
+│              MULTI-SYSTEM DASHBOARD                            │
+├─────────────────────────────────────────────────────────────────┤
+│                                                                  │
+│ Scan Network/USB:                                              │
+│   - Find all Windows installations                             │
+│   - List: PC-1 (Win11), PC-2 (Win10), Laptop (Win11)           │
+│                                                                  │
+│ Actions per System:                                            │
+│   - [S] Scan for issues                                        │
+│   - [R] Repair                                                 │
+│   - [B] Backup                                                 │
+│   - [V] View detailed diagnostics                              │
+│                                                                  │
+│ Use Cases:                                                      │
+│   - IT admin managing 50 PCs                                   │
+│   - Home user with dual-boot                                   │
+│   - Repair friend's PC remotely (network)                      │
+│                                                                  │
+└─────────────────────────────────────────────────────────────────┘
+```
+
+### 9.10 Automated Repair Flows
+
+**Engine: 19_auto_flows**
+
+Pre-built repair sequences for common scenarios.
+
+```
+┌─────────────────────────────────────────────────────────────────┐
+│                 AUTOMATED REPAIR FLOWS                         │
+├─────────────────────────────────────────────────────────────────┤
+│                                                                  │
+│ 1. "Windows Won't Boot" Flow:                                   │
+│    → Scan BCD store                                            │
+│    → Check boot files                                          │
+│    → Verify registry                                           │
+│    → Run SFC /scannow                                          │
+│    → Run DISM /RestoreHealth                                   │
+│    → Rebuild BCD                                               │
+│                                                                  │
+│ 2. "Blue Screen" Flow:                                         │
+│    → Read crash dump                                           │
+│    → Identify faulty driver                                    │
+│    → Replace driver                                            │
+│    → Check related services                                    │
+│                                                                  │
+│ 3. "Update Failed" Flow:                                       │
+│    → Clear Windows Update cache                                │
+│    → Reset update components                                   │
+│    → Re-register update files                                  │
+│    → Restart services                                          │
+│                                                                  │
+│ 4. "Missing DLL" Flow:                                         │
+│    → Identify DLL                                               │
+│    → Check dependencies                                        │
+│    → Download from cache/winget                                │
+│    → Register DLL                                              │
+│    → Verify                                                    │
+│                                                                  │
+└─────────────────────────────────────────────────────────────────┘
+```
+
+### 9.11 Recovery Media Generator
+
+**Engine: 20_media_gen**
+
+Create custom rescue media on-the-fly.
+
+```
+┌─────────────────────────────────────────────────────────────────┐
+│               RECOVERY MEDIA GENERATOR                         │
+├─────────────────────────────────────────────────────────────────┤
+│                                                                  │
+│ Generate Custom ISO/USB:                                       │
+│   - Select tools to include                                     │
+│   - Add custom drivers                                         │
+│   - Include specific baselines                                  │
+│   - Pre-configure KBA articles                                  │
+│   - Set default settings                                        │
+│                                                                  │
+│ Use Cases:                                                      │
+│   - Tech creates custom version for clients                     │
+│   - Add company branding                                        │
+│   - Include proprietary tools                                   │
+│   - Package specific repair flows                               │
+│                                                                  │
+│ Output:                                                         │
+│   - ISO file (burn to CD/DVD)                                  │
+│   - IMG file (write to USB)                                    │
+│   - PXE boot image (network)                                   │
+│                                                                  │
+└─────────────────────────────────────────────────────────────────┘
+```
+
+---
+
+## 10. Engine Summary
+
+| # | Engine | Purpose | Status |
+|---|--------|---------|--------|
+| 00 | Safety Evaluation | Pre-repair safety checks, veto | ✅ |
+| 01 | Oracle | Multiple diagnostic perspectives | ✅ |
+| 02 | File Scanner | System file hash verification | ✅ |
+| 03 | Registry Decorrupter | Registry hive analysis & repair | ✅ |
+| 04 | Event Log Engine | Windows event log parsing | ✅ |
+| 05 | Hash Verifier | Integrity checking | ✅ |
+| 06 | Diagnostic Synthesis | Integrate all findings | ✅ |
+| 07 | Memory | Session continuity | ✅ |
+| 08 | Learning | Outcome tracking | ✅ |
+| 09 | Risk Assessment | Repair risk evaluation | ✅ |
+| 10 | Snapshot | Time machine / rollback | NEW |
+| 11 | Crowd Intel | Anonymous pattern sharing | NEW |
+| 12 | Hardware Check | Memory/disk/CPU diagnostics | NEW |
+| 13 | Malware Guard | Pre-repair malware scan | NEW |
+| 14 | Recovery Console | Windows RE-like environment | NEW |
+| 15 | Driver Cache | Offline driver database | NEW |
+| 16 | AI Assistant | Natural language repair | NEW |
+| 17 | Live Patch | Hot-patch without reboot | NEW |
+| 18 | Multi-Dashboard | Manage multiple PCs | NEW |
+| 19 | Auto Flows | Pre-built repair sequences | NEW |
+| 20 | Media Gen | Custom rescue media builder | NEW |
+
+---
+
+*Document Version: 1.1*  
+*New Features Added: 2026-03-26*  
 *Created: 2026-03-25*
